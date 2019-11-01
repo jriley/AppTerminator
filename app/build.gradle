@@ -20,12 +20,12 @@ def build = "git rev-list HEAD --count".execute().text.trim()
 def fullVersionName = "${versionMajor}.${versionMinor}.${build}"
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "24.0.3"
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId "com.mathematicalfunk.appterminator"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode internalVersionCode
         versionName fullVersionName
         versionCode 1
@@ -46,17 +46,17 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:recyclerview-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.google.firebase:firebase-crash:9.8.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+//    compile 'com.google.firebase:firebase-crash:9.8.0'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
 
 // Add to the bottom of the file
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
